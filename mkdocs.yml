@@ -36,6 +36,9 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/projects-map.js
+
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -61,12 +64,18 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - footnotes
+
+hooks:
+  - hooks/download_leaflet.py
 
 plugins:
   - search
   - offline
   - optimize
   - privacy
+  - macros:
+      module_name: docs/macros/overviewlists
 
 extra:
   social:
