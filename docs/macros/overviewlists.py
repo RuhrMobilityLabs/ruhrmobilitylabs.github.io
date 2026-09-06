@@ -193,6 +193,49 @@ def generate_projects_map():
     return _generate_projects_map("ÖPNV_Projekte")
 
 
+def _generate_station_map(meta):
+    """Generate an HTML map container with embedded station and connection data.
+
+    ``meta`` is the current page's parsed front matter. A ``stations`` list is
+    expected, where each entry has ``name``, ``latitude``, ``longitude`` and an
+    optional ``connects_to`` list of other station names.
+    """
+    stations = meta.get("stations")
+    if not isinstance(stations, list) or not stations:
+        return ""
+
+    result = []
+    for station in stations:
+        if not isinstance(station, dict):
+            continue
+        name = station.get("name")
+        lat = station.get("latitude")
+        lng = station.get("longitude")
+        if name is None or lat is None or lng is None:
+            continue
+        connects_to = station.get("connects_to") or []
+        if not isinstance(connects_to, list):
+            connects_to = [connects_to]
+        result.append(
+            {
+                "name": str(name),
+                "lat": float(lat),
+                "lng": float(lng),
+                "connects_to": [str(c) for c in connects_to],
+            }
+        )
+
+    if not result:
+        return ""
+
+    data_json = json.dumps(result, ensure_ascii=False)
+    return (
+        '<script type="application/json" id="station-map-data">'
+        f"{data_json}</script>"
+        '<div id="station-map"></div>'
+    )
+
+
 def _badge_macro(value, color):
     """Render a value as a colored HTML badge (macro version)."""
     return (
@@ -207,3 +250,11 @@ def define_env(env):
     env.macro(generate_projects_table)
     env.macro(generate_projects_map)
     env.macro(_badge_macro, "badge")
+
+    def generate_station_map():
+        """Render a map of all stations and connections from the page front matter."""
+        page = getattr(env, "page", None)
+        meta = getattr(page, "meta", None) or {}
+        return _generate_station_map(meta)
+
+    env.macro(generate_station_map)

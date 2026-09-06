@@ -38,6 +38,7 @@ extra_css:
 
 extra_javascript:
   - javascripts/projects-map.js
+  - javascripts/station-map.js
 
 markdown_extensions:
   - admonition

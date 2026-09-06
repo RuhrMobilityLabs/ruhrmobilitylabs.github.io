@@ -10,6 +10,70 @@ cities:
   - Ratingen
   - Neuss
   - Meerbusch
+stations:
+  - name: "Ratingen West"
+    latitude: 51.299483
+    longitude: 6.837670
+  - name: "Wasserwerk"
+    latitude: 51.298880
+    longitude: 6.824867
+    connects_to: ["Ratingen West"]
+  - name: "Im Rott"
+    latitude: 51.299764
+    longitude: 6.819817
+    connects_to: ["Wasserwerk"]
+  - name: "Bahnhof Düsseldorf Flughafen"
+    latitude: 51.291560
+    longitude: 6.786370
+    connects_to: ["Im Rott"]
+  - name: "Wanheimer Straße"
+    latitude: 51.286756
+    longitude: 6.787062
+    connects_to: ["Bahnhof Düsseldorf Flughafen"]
+  - name: "Düsseldorf Flughafen Terminal"
+    latitude: 51.276018
+    longitude: 6.767058
+    connects_to: ["Wanheimer Straße"]
+  - name: "Freiligrathplatz"
+    latitude: 51.265319
+    longitude: 6.752536
+    connects_to: ["Düsseldorf Flughafen Terminal"]
+  - name: "Mörikestraße"
+    latitude: 51.264479
+    longitude: 6.745402
+    connects_to: ["Freiligrathplatz"]
+  - name: "Merkur Spiel-Arena/Messe Nord"
+    latitude: 51.26122
+    longitude: 6.73621
+    connects_to: ["Mörikestraße"]
+  - name: "D-Lörick"
+    latitude: 51.244664
+    longitude: 6.717314
+    connects_to: ["Merkur Spiel-Arena/Messe Nord"]
+  - name: "Willstätter Straße"
+    latitude: 51.24193
+    longitude: 6.71217
+    connects_to: ["D-Lörick"]
+  - name: "Böhlerweg"
+    latitude: 51.239110
+    longitude: 6.709267
+    connects_to: ["Willstätter Straße"]
+  - name: "Zülpicher Straße"
+    latitude: 51.232023
+    longitude: 6.701349
+    connects_to: ["Böhlerweg"]
+  - name: "Düsseldorf-Vogesenstraße"
+    latitude: 51.225480
+    longitude: 6.698466
+    connects_to: ["Zülpicher Straße"]
+  - name: "Neuss Am Kaiser"
+    latitude: 51.220285
+    longitude: 6.698189
+    connects_to: ["Düsseldorf-Vogesenstraße"]
+  - name: "Blücherstraße"
+    latitude: 51.214378
+    longitude: 6.693249
+    connects_to: ["Neuss Am Kaiser"]
 ---
 
 # Düsseldorf Stammstrecke 5 (Stadtbahn U81)
@@ -32,6 +96,8 @@ Neusser ÖPNV und verfolgt die folgenden Ziele:
 - Schaffen des Mobilitätshubs DUSconnect[^dus_connect] mit Anbindung an den SPNV, RRX, Flugverkehr,
   Individualverkehr (Auto mit P+R bzw. Fahrrad mit B+R). Dort wird zudem der
   EUREF Campus[^euref_campus] errichtet.
+
+{{ generate_station_map() }}
 
 ## Bauabschnitte
 

@@ -8,7 +8,7 @@ LEAFLET_IMAGES = ["marker-icon.png", "marker-shadow.png", "layers.png", "layers-
 
 
 def on_page_content(html, **kwargs):
-    if "projects-map" in html:
+    if "projects-map" in html or "station-map" in html:
         html += f'<link rel="stylesheet" href="{LEAFLET_CSS}">'
         html += f'<script src="{LEAFLET_JS}"></script>'
     return html
