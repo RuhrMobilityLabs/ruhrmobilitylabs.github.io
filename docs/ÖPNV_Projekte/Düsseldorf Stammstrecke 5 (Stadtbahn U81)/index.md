@@ -201,7 +201,7 @@ ist für den 04.09.2026 angesetzt[^ba1_eroeffnung_nrw] [^ba1_eroeffnung_rp_mai].
 
 ## Verwandte Projekte
 
-- Reaktivierung der Ratinger Weststrecke für den Personenverkehr
+- [Reaktivierung der Ratinger Weststrecke für den Personenverkehr](../Ratinger%20Weststrecke/index.md)
 - EUREF Campus[^euref_campus]
 
 ## Referenzen
