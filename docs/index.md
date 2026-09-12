@@ -1,4 +1,4 @@
-# Ruhr Mobility Blog
+# Home
 
 Willkommen auf dem *Ruhr Mobility Blog*!
 

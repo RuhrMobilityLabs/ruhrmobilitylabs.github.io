@@ -75,6 +75,7 @@ plugins:
   - offline
   - optimize
   - privacy
+  - blog
   - macros:
       module_name: docs/macros/overviewlists
 
