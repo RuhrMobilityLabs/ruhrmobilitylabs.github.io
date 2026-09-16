@@ -106,7 +106,7 @@ def _generate_projects_table(section_dir):
         cities = fm.get("cities", [])
         cities_str = ", ".join(cities) if isinstance(cities, list) else ""
         last_modified = _get_last_modified(index_file)
-        link = f"[{name}]({name}/)"
+        link = f"[{name}]({name}/index.md)"
         type_badge = _badge(project_type, PROJECT_TYPE_COLORS) if project_type else ""
         transport_badge = (
             _badge(transport_type, TRANSPORT_TYPE_COLORS) if transport_type else ""
