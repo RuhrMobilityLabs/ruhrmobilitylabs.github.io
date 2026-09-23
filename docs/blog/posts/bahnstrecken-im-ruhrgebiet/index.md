@@ -40,9 +40,10 @@ Von diesem historischen Netz ist heute ein bemerkenswerter, aber stark veränder
 
 Gleichzeitig ist das heutige Ruhrgebietsnetz nicht einfach das alte Netz der drei Eisenbahngesellschaften. Neue Verbindungs- und S-Bahn-Strecken, Umbauten, Ausbauten und Elektrifizierungen haben die historische Infrastruktur überformt. Von den einst zahllosen Zechenanschlüssen sind nur wenige übrig geblieben; viele ehemalige Bahndämme, Brücken und Einschnitte erinnern heute nur noch als Relikte oder Radwege an ihre industrielle Vergangenheit. Gerade darin liegt der besondere Reiz der Eisenbahnlandschaft des Ruhrgebiets: Das heutige Netz ist zugleich Verkehrsinfrastruktur, Industriedenkmal und sichtbares Archiv der Geschichte des Reviers.
 
-<!-- TODO Netzkarte: Hier eine Karte der historischen und heutigen Bahnstrecken einfügen (Bilddatei in docs/ ablegen, dann z. B.:
-![Netzplan der Bahnstrecken im Ruhrgebiet](../../../assets/bahnstrecken-karte.png)
-) -->
+<figure markdown="span">
+  ![Netzplan der zentralen Bahnstrecken für Personenverkehr im Ruhrgebiet](bahnstrecken-karte-rhein-ruhr.png)
+  <figcaption>Zentrale Bahnstrecken im Ruhrgebiet</figcaption>
+</figure>
 
 ## Zentrale Strecken auf der Nord-Süd-Achse
 
