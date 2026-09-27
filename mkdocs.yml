@@ -6,6 +6,7 @@ copyright: RuhrMobilityLabs
 theme:
   name: material
   language: de
+  custom_dir: overrides
   favicon: icon.png
   logo: icon.png
   palette:
