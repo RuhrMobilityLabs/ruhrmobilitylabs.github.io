@@ -12,30 +12,30 @@ stations:
   - name: "Unterstraße"
     latitude: 51.480701
     longitude: 6.900980
+  - name: "Hausmannsfeld"
+    latitude: 51.482
+    longitude: 6.89323
+    connects_to: ["Unterstraße"]
   - name: "Lipperheidebaum"
     latitude: 51.482475
     longitude: 6.889420
-    connects_to: ["Unterstraße"]
-  - name: "Stahlwerk Süd"
-    latitude: 51.486347
-    longitude: 6.891624
+    connects_to: ["Hausmannsfeld"]
+  - name: "Stahlwerk"
+    latitude: 51.487703
+    longitude: 6.891088
     connects_to: ["Lipperheidebaum"]
-  - name: "Newag-Siedlung"
-    latitude: 51.489403
-    longitude: 6.891120
-    connects_to: ["Stahlwerk Süd"]
   - name: "Osterfelder Straße"
     latitude: 51.491571
     longitude: 6.886926
-    connects_to: ["Newag-Siedlung"]
-  - name: "Centro"
+    connects_to: ["Stahlwerk"]
+  - name: "Sealife/Marina/Centro"
     latitude: 51.493495
     longitude: 6.879963
     connects_to: ["Osterfelder Straße"]
   - name: "Gasometer"
     latitude: 51.493001
     longitude: 6.873606
-    connects_to: ["Centro"]
+    connects_to: ["Sealife/Marina/Centro"]
 ---
 
 # Lückenschluss der Linie 105
@@ -46,9 +46,10 @@ Lückenschluss der Straßenbahnlinie 105 von Essen-Unterstraße nach Oberhausen 
 
 Die Linie 105 endet heute an der Haltestelle Unterstraße in Essen-Frintrop. Durch den Lückenschluss
 entsteht erstmals seit den 1970er Jahren wieder eine durchgehende, umsteigefreie
-Straßenbahnverbindung zwischen Essen und Oberhausen[^stoag_pm]. Die rund 3,5 Kilometer lange
-Neubaustrecke[^stoag_pm] führt von der heutigen Endhaltestelle Unterstraße über die Essener Straße
-bis zum Anschluss an die ÖPNV-Trasse in der Neuen Mitte Oberhausen. Über die bestehende Trasse wird
+Straßenbahnverbindung zwischen Essen und Oberhausen[^stoag_pm]. Die rund 3,6 Kilometer lange
+Neubaustrecke[^ratsbeschluss_2026] führt von der heutigen Endhaltestelle Unterstraße über die Essener Straße
+bis zum Anschluss an die ÖPNV-Trasse in der Neuen Mitte Oberhausen; 0,45 Kilometer davon liegen auf
+Essener Stadtgebiet. Über die bestehende Trasse wird
 der Anschluss an den Oberhausener Hauptbahnhof beziehungsweise den Bahnhof Sterkrade ermöglicht.
 
 Durch das Projekt entstehen die folgenden Vorteile für die Region:
@@ -59,36 +60,34 @@ Durch das Projekt entstehen die folgenden Vorteile für die Region:
   Nachbarstädten.
 - Bessere Anbindung der östlichen Teile des Stadtteils Neue Mitte an den Oberhausen Hbf und in
   Richtung Essen.
-- Erschließung der neuen Wohnquartiere Stahlwerk Süd und NEWAG-Siedlung entlang der Strecke.
+- Erschließung der neuen Wohnquartiere am Brammenring und auf dem Gelände des ehemaligen Stahlwerks.
 - Bessere Erreichbarkeit von Centro, Gasometer und der übrigen Freizeitangebote der Neuen Mitte für
   Besucher aus dem Essener Stadtgebiet.
-- In Kombination mit einem neuen Regionalbahnhaltepunkt *Neue Mitte* an der Köln-Mindener
-  Eisenbahnstrecke wird die Region besser in Richtung Krefeld, Duisburg, Gelsenkirchen und Dortmund
-  angebunden[^rbh_neue_mitte].
 
 ## Streckenverlauf
 
 Die neue Straßenbahnstrecke nimmt ihren Ausgang an der bestehenden Endhaltestelle *Unterstraße* auf
 Essener Stadtgebiet und verläuft von dort in Richtung Stadtgrenze. In Oberhausen folgt die Trasse
-zunächst der Essener Straße, überquert die Köln-Mindener-Eisenbahnstrecke auf einer neu zu
-errichtenden Brücke (HOAG-Brücke) und führt anschließend auf einem grünen Gleiskörper durch den
+zunächst der Essener Straße, überquert die Köln-Mindener-Eisenbahnstrecke auf einem Rampen- und
+Brückenbauwerk und führt anschließend auf einem grünen Gleiskörper durch den
 Stahlwerkspark. Nach der Querung der Osterfelder Straße auf einer weiteren Brücke mündet die Strecke
 in Höhe des Gasometers in die bestehende ÖPNV-Trasse der Oberhausener Straßenbahnlinie 112
 ein[^grundsatzbeschluss_oberhausen].
 
-Entlang der Strecke sind zusätzlich zur bestehenden Haltestelle *Unterstraße* sechs neue Haltestellen
-vorgesehen[^stoag_pm]:
+Entlang der Strecke sind zusätzlich zur bestehenden Haltestelle *Unterstraße* sieben neue Haltestellen
+vorgesehen, sechs davon auf Oberhausener Stadtgebiet und eine im Bereich der *Unterstraße* auf
+Essener Stadtgebiet:
 
-- *Lipperheidebaum* an der Stadtgrenze Essen/Oberhausen
-- *Stahlwerk Süd*: Erschließung des neuen Wohnquartiers auf dem Stahlwerksgelände
-- *NEWAG-Siedlung*: Erschließung des neuen Wohnquartiers auf dem NEWAG-Areal
-- *Osterfelder Straße*: Anbindung der umliegenden Wohnquartiere
-- *Centro* in unmittelbarer Nähe zum Einkaufszentrum Westfield Centro
-- *Gasometer*: Geplante neue Haltestelle auf der bestehenden ÖPNV-Trasse der Linie 112 zwischen
+- *Hausmannsfeld* an der Essener Straße, als Mittelbahnsteig in Mittellage angelegt
+- *Lipperheidebaum* an der Essener Straße im Bereich der Mellinghofer Straße, ebenfalls als Mittelbahnsteig
+- *Stahlwerk*: Erschließung des neuen Wohnquartiers auf dem Gelände des ehemaligen Stahlwerks
+- *Osterfelder Straße* und *Sealife/Marina/Centro*: in Hochlage entlang der Marina, des
+  Freizeit- und Einkaufsstandorts und parallel zu einer Güterbahnstrecke
+- *Gasometer*: neue Haltestelle auf der bestehenden ÖPNV-Trasse der Linie 112 zwischen
   Neue Mitte und OLGA-Park
 
 Derzeit verkehrt die Linie 112 zwischen Neue Mitte und OLGA-Park ohne Halt am Gasometer. Im Zuge des
-Lückenschlusses könnte dort eine neue Haltestelle *Gasometer* entstehen, an der die Linie 105 in die
+Lückenschlusses entsteht dort eine neue Haltestelle *Gasometer*, an der die Linie 105 in die
 bestehende ÖPNV-Trasse einfädelt und die zugleich als Übergang zwischen Neubau- und Bestandsnetz
 dient.
 
@@ -105,7 +104,7 @@ Haltestelle *Unterstraße*.
 Erste Pläne für einen Lückenschluss im Zuge der neuen ÖPNV-Trasse der Neuen Mitte gab es bereits in
 den 1990er Jahren. Bei einem Ratsbürgerentscheid im März 2015 sprach sich eine Mehrheit von
 57 Prozent der Teilnehmer jedoch gegen die damals geplante, aufgeständerte Trassenführung aus[^tramtracks].
-Die nun geplante Variante verläuft hingegen ebenerdig, ist mit rund 3,5 Kilometern etwa 200 Meter
+Die nun geplante Variante verläuft hingegen ebenerdig, ist mit rund 3,6 Kilometern etwa 300 Meter
 länger als die Alt-Variante und erschließt zusätzlich die neuen Wohnquartiere im Osten der Neuen
 Mitte[^grundsatzbeschluss_oberhausen].
 
@@ -118,23 +117,31 @@ vom Rat beschlossene Masterplan „Neue Mitte 4.0"[^masterplan_neue_mitte_2022].
 
 Am 13. Mai 2026 fand im Technologiezentrum Oberhausen eine öffentliche
 Bürgerinformationsveranstaltung statt, in der die überarbeitete Vorplanung der Strecke vorgestellt
-wurde[^stoag_pm]. Die Vorplanungen werden im Anschluss unter Einbeziehung der ausgewerteten
-Rückmeldungen aktualisiert und zur Beschlussfassung durch den Rat der Stadt Oberhausen aufbereitet.
-Dieser Beschluss ist für den Sommer 2026 geplant und dient als Grundlage für die Entwicklung der
-konkreten Entwurfsplanung, auf deren Basis anschließend das Planfeststellungsverfahren starten
-kann[^stoag_pm].
+wurde[^stoag_pm]. Die Rückmeldungen sind in die Aktualisierung der Planung eingeflossen.
 
-Die Bauarbeiten können voraussichtlich 2027 beginnen. Ziel ist es, den Betrieb der Linie 105 auf der
-neuen Trasse im Jahr 2030 aufzunehmen[^grundsatzbeschluss_oberhausen].
+Am 28. September 2026 fasste der Rat der Stadt Oberhausen den Planungsbeschluss zur überarbeiteten
+Planung[^ratsbeschluss_2026] und beauftragte die STOAG, die Leistungsphasen 3 und 4 nach HOAI –
+Entwurfs- und Genehmigungsplanung – zu erarbeiten und das förmliche Planfeststellungsverfahren
+einzuleiten. Die Antragstellung ist für den weiteren Verlauf des Jahres 2027 vorgesehen, die
+Planfeststellung erfolgt durch die Bezirksregierung Düsseldorf. Am Ende des Verfahrens steht ein
+erneut vom Rat zu fassender Baubeschluss, die Haushaltsmittel werden voraussichtlich ab 2030 ff.
+angemeldet. Die Inbetriebnahme auf der neuen Trasse ist für das Jahr 2030 vorgesehen[^tramtracks].
 
 ## Kosten und Förderung
 
-Die Baukosten werden auf rund 100 bis 120 Millionen Euro geschätzt. Inklusive der Planungskosten von
-etwa 10 bis 12 Millionen Euro belaufen sich die Gesamtkosten auf 110 bis 132 Millionen Euro[^fakta].
-Bis zu 95 Prozent der zuwendungsfähigen Kosten sollen durch Fördermittel von Bund und Land getragen
-werden[^linie105]. Auf die Stadtwerke Oberhausen GmbH (STOAG) kämen Kosten von 15,6 bis maximal
-21,6 Millionen Euro zu[^grundsatzbeschluss_oberhausen]. Die zusätzlichen Betriebskosten werden auf
-fünf bis sechs Millionen Euro pro Jahr geschätzt[^tramtracks].
+Die Nettobaukosten einschließlich Grunderwerb werden auf rund 134 Millionen Euro geschätzt. Nicht
+zuwendungsfähig sind davon der parallele Radweg (3,0 Millionen Euro), die über das förderfähige
+Standardmaß hinausgehende Ausgestaltung der Haltestellen (3,0 Millionen Euro) und die vorsorgliche
+Verlängerung des Brückenbauwerks für einen Regionalbahnhalt (2,77 Millionen Euro). Nach Abzug dieser
+Positionen sowie eines Risikoabschlags von 10 Prozent und mit einem Planungskostenzuschlag von
+10 Prozent ergeben sich zuwendungsfähige Gesamtkosten von rund 123,01 Millionen Euro netto, davon
+90 Prozent Förderung nach dem Gemeindeverkehrsfinanzierungsgesetz. Der Eigenanteil der STOAG beträgt
+insgesamt rund 33,39 Millionen Euro bei Gesamtkosten von rund 144,10 Millionen Euro[^ratsbeschluss_2026].
+Die jährlichen Gesamtkosten nach Fertigstellung werden mit rund 6,45 Millionen Euro angegeben;
+nach Abzug der Fahrgeldeinnahmen (2,38 Millionen Euro) und der entfallenden Erschließungskosten für
+eine alternative Busanbindung (1,42 Millionen Euro) verbleiben rund 2,65 Millionen Euro jährlicher
+Mehraufwand. Das Nutzen-Kosten-Verhältnis liegt bei 1,96; Voraussetzung für die Förderung ist die
+Aufnahme in den ÖPNV-Bedarfsplan des Landes NRW.
 
 ## Betriebskonzept
 
@@ -144,11 +151,16 @@ Richtung Sterkrade weitergeführt wird[^tramtracks].
 
 ## Projekt-Updates
 
-### 05.02.2024: Grundsatzbeschluss des Rates der Stadt Oberhausen
+### 28.09.2026: Planungsbeschluss des Rates der Stadt Oberhausen
 
-Mit breiter Mehrheit hat der Rat der Stadt Oberhausen den Grundsatzbeschluss zur Verlängerung der
-Straßenbahnlinie 105 gefasst und damit den Auftrag für die weitere Konkretisierung der Planung und
-die Beteiligung der Bürgerinnen und Bürger erteilt[^grundsatzbeschluss_oberhausen].
+Der Rat der Stadt Oberhausen hat der überarbeiteten Planung zugestimmt und die STOAG mit den
+Leistungsphasen 3 und 4 nach HOAI sowie dem förmlichen Planfeststellungsverfahren beauftragt[^ratsbeschluss_2026].
+Über einen Änderungsantrag der SPD-Fraktion beschloss der Rat, die Gestaltung der stadtbildprägenden
+Haltestellen in der Leistungsphase 3 anhand von Ausstattungs- und Kostenvarianten zu konkretisieren;
+die umfängliche Kostenermittlung wird dem Rat erneut zur Entscheidung vorgelegt[^spd_aendungsantrag].
+Eine vorsorgliche planerische Berücksichtigung des Regionalbahnhalts *Neue Mitte* wurde dagegen
+nicht beschlossen. Der Verkehrsverbund Rhein-Ruhr verfolgt den Halt nicht 
+und er ist im Zielnetz 2040 nicht vorgesehen ist[^ratsbeschluss_2026].
 
 ### 13.05.2026: Bürgerinformationsveranstaltung zur überarbeiteten Vorplanung
 
@@ -156,12 +168,20 @@ Beim offenen Infomarkt im Technologiezentrum Oberhausen stellten die Projektpart
 überarbeitete Vorplanung vor. Die Rückmeldungen fließen in die Aktualisierung der Planung ein; die
 Beschlussfassung durch den Rat ist für den Sommer 2026 vorgesehen[^stoag_pm] [^linie105_aktuelles].
 
+### 05.02.2024: Grundsatzbeschluss des Rates der Stadt Oberhausen
+
+Mit breiter Mehrheit hat der Rat der Stadt Oberhausen den Grundsatzbeschluss zur Verlängerung der
+Straßenbahnlinie 105 gefasst und damit den Auftrag für die weitere Konkretisierung der Planung und
+die Beteiligung der Bürgerinnen und Bürger erteilt[^grundsatzbeschluss_oberhausen].
+
 ## Verwandte Projekte
 
 - [Citybahn Essen](../Citybahn%20Essen/index.md): Die Citybahn schafft zusätzliche Kapazitäten im
   Essener Straßenbahnnetz und kann beispielsweise die Linie 105 aus dem Tunnel am Hauptbahnhof
   herausnehmen.
-- Regionalbahnhaltepunkt *Neue Mitte* an der Köln-Mindener-Eisenbahnstrecke[^rbh_neue_mitte]
+- Regionalbahnhaltepunkt *Neue Mitte* an der Köln-Mindener-Eisenbahnstrecke: fahrplantechnisch
+  realisierbar, vom Verkehrsverbund Rhein-Ruhr derzeit nicht verfolgt und im Zielnetz 2040 nicht
+  vorgesehen; eine planerische Berücksichtigung ist nicht beschlossen[^ratsbeschluss_2026].
 
 Offizielle Webseite: [linie105.de](https://www.linie105.de/)
 
@@ -169,13 +189,13 @@ Offizielle Webseite: [linie105.de](https://www.linie105.de/)
 
 - [Offizielle Webseite des Projektes Lückenschluss der Linie 105 (linie105.de)](https://www.linie105.de/)
 - [Masterplan Neue Mitte (oberhausen.de)](https://www.oberhausen.de/masterplan-neue-mitte)
-- [Oberhausen: Zweiter Anlauf für die 105 (tramtracks.de)](https://tramtracks.de/magazin_2024-03_oberhausen_linie_105.html)
+- Masterplan Neue Mitte (Stadt Oberhausen, Drucksache M/17/1733-01, 21.03.2022)[^masterplan_neue_mitte_2022]
+- Beschluss zur Planung der Straßenbahnlinie 105 (Stadt Oberhausen, Drucksache B/18/1246, 28.09.2026)[^ratsbeschluss_2026]
 
 [^grundsatzbeschluss_oberhausen]: https://www.oberhausen.de/de/index/rathaus/news/2024/02_februar/stadtrat_stimmt_mit_breiter_mehrheit_fuer_den_grundsatzbeschluss_zur_verlaengerung_der_linie_105.php
 [^stoag_pm]: https://www.stoag.de/dialog/neuigkeiten/detail/direkte-strassenbahnverbindung-zwischen-oberhausen-und-essen-1.html
 [^tramtracks]: https://tramtracks.de/magazin_2024-03_oberhausen_linie_105.html
 [^masterplan_neue_mitte_2022]: https://linie105.de/wp-content/uploads/2026/05/2022-03-21_20M_17_1733-01_20Masterplan_20Neue_20Mitt_20SAO.pdf
-[^rbh_neue_mitte]: https://www.cdu-oberhausen.de/artikel/regionalbahnhaltepunkt-neue-mitte
-[^fakta]: https://www.fakta.co/de/oberhausen-essen-strassenbahn-linie-105
-[^linie105]: https://www.linie105.de/
 [^linie105_aktuelles]: https://www.linie105.de/2026/05/14/pressemitteilung-zur-buergerinformationsveranstaltung-am-13-mai-2026/
+[^ratsbeschluss_2026]: https://www.linie105.de/wp-content/uploads/2026/09/2026-09-01-B_18_1246-Beschluss-zur-PlanungSammeldokument_kl.pdf
+[^spd_aendungsantrag]: https://www.linie105.de/wp-content/uploads/2026/09/2026-09-28-A_18_1333-Aenderungsantrag.pdf
