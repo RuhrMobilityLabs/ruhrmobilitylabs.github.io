@@ -1,0 +1,108 @@
+# Zensical configuration, ported from mkdocs.yml.
+# Reference: https://zensical.org/docs/setup/basics/
+
+[project]
+site_name = "RuhrMobilityBlog"
+site_description = "Researching sustainable mobility solutions for the Ruhr region"
+site_url = "https://ruhrmobilitylabs.github.io"
+copyright = "RuhrMobilityLabs"
+
+extra_css = [
+  "stylesheets/extra.css",
+  # Leaflet is vendored in docs/assets/leaflet (BSD-2-Clause) so that no code is
+  # pulled from a CDN at runtime. Map tiles still come from openstreetmap.org,
+  # but only after the reader consents via the prompt in the map scripts.
+  "assets/leaflet/leaflet.css",
+]
+
+extra_javascript = [
+  "assets/leaflet/leaflet.js",
+  "javascripts/projects-map.js",
+  "javascripts/station-map.js",
+]
+
+[project.theme]
+variant = "modern"
+# The modern variant would otherwise pull Inter / JetBrains Mono from Google
+# Fonts at runtime. `false` falls back to system fonts, which keeps the site
+# free of third-party requests (https://zensical.org/docs/setup/fonts/).
+font = false
+language = "de"
+favicon = "icon.png"
+logo = "icon.png"
+
+features = [
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.indexes",
+  "search.highlight",
+  "content.code.copy",
+  "content.code.annotate",
+  "content.tabs.link",
+  "header.autohide",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "material/brightness-7"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "material/brightness-4"
+toggle.name = "Switch to light mode"
+
+[project.plugins.search]
+
+[project.plugins.offline]
+
+[project.plugins.blog]
+
+[project.plugins.tags]
+
+[project.plugins.macros]
+module_name = "docs/macros/overviewlists"
+
+# Not yet supported by Zensical, see the compatibility roadmap:
+#   optimize – in progress
+#   privacy  – planned
+
+# The offline plugin hardcodes a polyfill from unpkg.com. Declaring a local copy
+# here suppresses that, because Zensical only appends the CDN URL when no
+# configured polyfill path contains "iframe-worker".
+[[project.extra.polyfills]]
+path = "assets/iframe-worker/shim.js"
+type = "text/javascript"
+async = false
+defer = false
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/ruhrmobilitylabs"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+def_list = {}
+footnotes = {}
+md_in_html = {}
+tables = {}
+toc.permalink = true
+pymdownx.critic = {}
+pymdownx.details = {}
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.mark = {}
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+pymdownx.tasklist.custom_checkbox = true
+pymdownx.emoji.emoji_index = "zensical.extensions.emoji.twemoji"
+pymdownx.emoji.emoji_generator = "zensical.extensions.emoji.to_svg"
