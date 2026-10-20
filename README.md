@@ -6,6 +6,7 @@
 uvx zensical serve
 
 uvx zensical build --clean
+python scripts/generate_llms_txt.py site
 ```
 
 ## Licenses
