@@ -1,5 +1,8 @@
 ---
 description: Reaktivierung der Ratinger Weststrecke für den Personenverkehr. Die Trasse wird aktuell ausschließlich für den Güterverkehr verwendet. Es ist geplant, die Strecke auszubauen und eine S-Bahn über Duisburg-Wedau und Ratingen anzubieten.
+date:
+  created: 2026-09-08
+  updated: 2026-07-10
 project_type: reaktivierung
 transport_type: eisenbahn
 status: antrag

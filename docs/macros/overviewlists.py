@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 STATUS_COLORS = {
@@ -37,8 +37,8 @@ def _format_label(value):
 def _get_frontmatter(filepath):
     """Parse YAML frontmatter into a dict (minimal, no external deps).
 
-    Handles simple scalar values as well as YAML block-list fields
-    (``- item`` lines following a key).
+    Handles simple scalar values, YAML block-list fields (``- item`` lines
+    following a key) and one level of nested ``key: value`` mappings.
     """
     content = filepath.read_text(encoding="utf-8")
     match = re.match(r"^---\s*\n(.*?)\n---\s*\n", content, re.DOTALL)
@@ -61,13 +61,27 @@ def _get_frontmatter(filepath):
                 result[current_key].append(item)
             else:
                 result[current_key] = [item]
+        elif re.match(r"^\s+[^\s-][^:]*:", line) and current_key:
+            if result[current_key] == [] or isinstance(result[current_key], dict):
+                if not isinstance(result[current_key], dict):
+                    result[current_key] = {}
+                key, value = line.split(":", 1)
+                result[current_key][key.strip()] = value.strip().strip("\"'")
     return result
 
 
-def _get_last_modified(filepath):
-    """Return the file's last modified date as a formatted string."""
-    mtime = filepath.stat().st_mtime
-    return datetime.fromtimestamp(mtime, tz=timezone.utc).strftime("%d.%m.%Y")
+def _get_last_modified(fm):
+    """Return the ``date.updated`` (or ``date.created``) frontmatter value as a formatted string."""
+    dates = fm.get("date")
+    if not isinstance(dates, dict):
+        return ""
+    value = dates.get("updated") or dates.get("created")
+    if not value:
+        return ""
+    try:
+        return datetime.strptime(value, "%Y-%m-%d").strftime("%d.%m.%Y")
+    except ValueError:
+        return value
 
 
 def _badge(value, color_map):
@@ -105,7 +119,7 @@ def _generate_projects_table(section_dir):
         status = fm.get("status", "")
         cities = fm.get("cities", [])
         cities_str = ", ".join(cities) if isinstance(cities, list) else ""
-        last_modified = _get_last_modified(index_file)
+        last_modified = _get_last_modified(fm)
         link = f"[{name}]({name}/index.md)"
         type_badge = _badge(project_type, PROJECT_TYPE_COLORS) if project_type else ""
         transport_badge = (

@@ -1,5 +1,8 @@
 ---
 description: Langfristig geplante Neubaustrecke der Düsseldorfer Stadtbahn zwischen der Messe und dem Flughafen mit möglichen Erweiterungen nach Ratingen und einer Rheinquerung nach Neuss. Die neue Linie U81 soll auf der Strecke verkehren.
+date:
+  created: 2026-09-06
+  updated: 2026-09-04
 project_type: neubau
 transport_type: stadtbahn
 status: im_bau
@@ -178,6 +181,11 @@ Im vierten Bauabschnitt sollen die folgenden neuen Haltestellen errichtet werden
 
 ## Projekt-Updates
 
+### 04.09.2026: Eröffnung des ersten Bauabschnittes der U81
+
+Die Eröffnung des ersten Bauabschnittes der U81 zwischen *Freiligrathplatz* und *Flughafen-Terminal*
+ist für den 04.09.2026 angesetzt[^ba1_eroeffnung_nrw] [^ba1_eroeffnung_rp_mai].
+
 ### 18.06.2026: Wirtschaftlichkeit des dritten Bauabschnittes nicht gegeben. Neubewertung geplant
 
 Während laut RP im Januar 2026 noch der Plan vorlag, den dritten Bauabschnitt vor dem zweiten
@@ -193,11 +201,6 @@ Zudem entfällt die Möglichkeit, die Ratinger Weststrecke als direkte Ausweichs
 nur mit Umstieg zum SkyTrain, sollte der vierte Bauabschnitt dennoch gebaut werden. Zudem ist
 denkbar, dass gerade bei großen Messeveranstaltungen der SkyTrain überlastet wird, da Personen
 versuchen könnten, über den SkyTrain und den ersten Bauabschnitt vom Bahnhof zur Messe zu gelangen.
-
-### 04.09.2026: Eröffnung des ersten Bauabschnittes der U81
-
-Die Eröffnung des ersten Bauabschnittes der U81 zwischen *Freiligrathplatz* und *Flughafen-Terminal*
-ist für den 04.09.2026 angesetzt[^ba1_eroeffnung_nrw] [^ba1_eroeffnung_rp_mai].
 
 ## Verwandte Projekte
 

@@ -1,5 +1,8 @@
 ---
 description: Geplante urbane Seilbahn zwischen dem Hauptbahnhof Wanne-Eickel und dem ehemaligen Zechengelände Blumenthal XI in Herne. Die rund einen Kilometer lange Verbindung soll das entstehende High- und Green-Tech-Quartier „Blumenthal“ direkt an den regionalen und überregionalen Bahnverkehr anbinden und wird als erste in den ÖPNV integrierte urbane Seilbahn Deutschlands vollständig in den Nahverkehr des VRR eingebunden.
+date:
+  created: 2026-09-23
+  updated: 2026-07-14
 project_type: neubau
 transport_type: seilbahn
 status: geplant

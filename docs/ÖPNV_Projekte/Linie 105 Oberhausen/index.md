@@ -1,5 +1,8 @@
 ---
 description: Lückenschluss der Straßenbahnlinie 105 von Essen-Unterstraße nach Oberhausen über die Neue Mitte. Damit entsteht erstmals seit den 1970er Jahren wieder eine durchgehende, umsteigefreie Straßenbahnverbindung zwischen beiden Städten. Das Projekt ist Teil des Masterplan Neue Mitte und zielt auf eine bessere Verknüpfung der Städte ab und schafft eine bessere Anbindung des Stadtteils Neue Mitte und des Einkaufszentrums Centro.
+date:
+  created: 2026-09-13
+  updated: 2026-09-28
 project_type: neubau
 transport_type: stadtbahn
 status: geplant

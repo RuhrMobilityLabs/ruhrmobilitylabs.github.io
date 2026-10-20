@@ -1,5 +1,7 @@
 ---
 description: Neubaustrecke der Essener Straßenbahn auf der West-Ost-Achse von Essen Bergeborbeck über ESSEN 51 zum Betriebshof Stadtmitte. Teil des Projektes ist eine neue oberirdische Straßenbahnhaltestelle am Hauptbahnhof, um den U-Bahn-Tunnel zu entlasten.
+date:
+  created: 2026-09-09
 project_type: neubau
 transport_type: stadtbahn
 status: im_bau

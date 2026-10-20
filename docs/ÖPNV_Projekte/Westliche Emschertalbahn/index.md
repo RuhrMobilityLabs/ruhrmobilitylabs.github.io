@@ -1,5 +1,8 @@
 ---
 description: Mögliche Reaktivierung der heute nur vom Güterverkehr genutzten Bahnstrecke zwischen Bottrop Vonderort und Gelsenkirchen-Zoo über Bottrop Süd, Essen Karnap, GE-Horst und GE-Schalke, um das nördliche Ruhrgebiet besser an den Personenverkehr anzubinden.
+date:
+  created: 2026-10-20
+  updated: 2023-01-17
 project_type: reaktivierung
 transport_type: eisenbahn
 status: idee
