@@ -1,0 +1,6 @@
+three.js r160 (0.160.0)
+https://registry.npmjs.org/three/-/three-0.160.0.tgz
+
+Files: build/three.module.min.js and the addons OrbitControls, RoomEnvironment,
+BufferGeometryUtils and RoundedBoxGeometry from examples/jsm/. In the addons the
+bare "three" import is rewritten to ./three.module.min.js.

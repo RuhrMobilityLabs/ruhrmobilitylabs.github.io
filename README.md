@@ -15,4 +15,5 @@ Location | License
 ---------|--------
 `docs/assets/iframe-worker` | MIT License
 `docs/assets/leaflet` | BSD-2-Clause license
+`docs/assets/three` | MIT License
 `docs/**/*.md` (blog content) | CC BY 4.0
