@@ -34,6 +34,22 @@
   font-size: 0.9rem;
 }
 
+.station-map-legend {
+  background: rgba(255, 255, 255, 0.92);
+  color: #222;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.station-map-legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* NF4 tram scene on the home page */
 .tram-hero {
   position: relative;

@@ -207,18 +207,134 @@ def generate_projects_map():
     return _generate_projects_map("ÖPNV_Projekte")
 
 
+TRACK_TYPES = ("in_street", "segregated", "independent")
+
+DEFAULT_EDGE_COLOR = "#4181bb"
+
+
+def _parse_point(point):
+    """Parse a via point given as ``[lat, lng]`` or ``{latitude, longitude}``."""
+    if isinstance(point, dict):
+        lat = point.get("latitude", point.get("lat"))
+        lng = point.get("longitude", point.get("lng"))
+    elif isinstance(point, (list, tuple)) and len(point) == 2:
+        lat, lng = point
+    else:
+        return None
+    try:
+        return [float(lat), float(lng)]
+    except (TypeError, ValueError):
+        return None
+
+
+def _parse_track(track, source, target):
+    """Validate a track type, warning about and dropping unknown values."""
+    if track is None or track in TRACK_TYPES:
+        return track
+    print(
+        f"WARNING: station map: unknown track type '{track}' on "
+        f"'{source}' -> '{target}' (expected one of {', '.join(TRACK_TYPES)})"
+    )
+    return None
+
+
+def _parse_connection(source, conn):
+    """Normalize one ``connects_to`` entry into an edge dict (or ``None``).
+
+    An entry is either a plain station name or a mapping with the keys
+    ``to`` (required), ``color``, ``track``, ``planned``, ``label`` and ``via``.
+    """
+    if not isinstance(conn, dict):
+        conn = {"to": conn}
+    target = conn.get("to")
+    if target is None:
+        return None
+
+    track = _parse_track(conn.get("track"), source, target)
+
+    # Each via entry is ``(point, track)`` where ``track`` is the track type
+    # starting at that point, or ``None`` if it does not change there.
+    via = []
+    for point in conn.get("via") or []:
+        parsed = _parse_point(point)
+        if parsed is None:
+            print(
+                f"WARNING: station map: invalid via point {point!r} on "
+                f"'{source}' -> '{target}'"
+            )
+            continue
+        change = None
+        if isinstance(point, dict) and "track" in point:
+            change = _parse_track(point["track"], source, target)
+        via.append((parsed, change))
+
+    label = conn.get("label")
+    return {
+        "from": str(source),
+        "to": str(target),
+        "color": str(conn.get("color") or DEFAULT_EDGE_COLOR),
+        "track": track,
+        "planned": bool(conn.get("planned", False)),
+        "label": str(label) if label else None,
+        "via": via,
+    }
+
+
+def _split_segments(edge, coords):
+    """Replace an edge's ``via``/``track`` with ``segments`` of uniform track type.
+
+    Each segment is ``{"track": ..., "points": [[lat, lng], ...]}``; consecutive
+    segments share their boundary point so the drawn line stays continuous.
+    """
+    track = edge.pop("track")
+    via = edge.pop("via")
+    points = [coords[edge["from"]]]
+    segments = []
+    for point, change in via:
+        points.append(point)
+        if change is not None and change != track:
+            segments.append({"track": track, "points": points})
+            track, points = change, [point]
+    points.append(coords[edge["to"]])
+    segments.append({"track": track, "points": points})
+    edge["segments"] = segments
+    return edge
+
+
 def _generate_station_map(meta):
     """Generate an HTML map container with embedded station and connection data.
 
     ``meta`` is the current page's parsed front matter. A ``stations`` list is
     expected, where each entry has ``name``, ``latitude``, ``longitude`` and an
-    optional ``connects_to`` list of other station names.
+    optional ``connects_to`` list. Each ``connects_to`` entry is either the name
+    of another station or a mapping::
+
+        connects_to:
+          - "Stahlwerk"                     # plain connection, default style
+          - to: "Gasometer"
+            color: "#e3000f"                # line color (e.g. per branch)
+            label: "Linie 105"              # shown in popup and legend
+            track: segregated               # in_street | segregated | independent
+            planned: true                   # optional/planned extension (dashed)
+            via:                            # intermediate points, ordered from
+              - [51.4921, 6.8780]           # this station towards ``to``
+              - {latitude: 51.4925, longitude: 6.8760}
+              - {latitude: 51.4930, longitude: 6.8740, track: in_street}
+
+    A via point given as a mapping may set ``track``: the track type then
+    changes at that point and applies until the next change or ``to``.
+
+    A connection only needs to be defined on one of its two stations. If it is
+    defined on both, a mapping entry wins over a plain name; otherwise the first
+    definition wins.
     """
     stations = meta.get("stations")
     if not isinstance(stations, list) or not stations:
         return ""
 
     result = []
+    raw_connections = []
+    coords = {}
     for station in stations:
         if not isinstance(station, dict):
             continue
@@ -227,22 +343,39 @@ def _generate_station_map(meta):
         lng = station.get("longitude")
         if name is None or lat is None or lng is None:
             continue
+        result.append({"name": str(name), "lat": float(lat), "lng": float(lng)})
+        coords[str(name)] = [float(lat), float(lng)]
         connects_to = station.get("connects_to") or []
         if not isinstance(connects_to, list):
             connects_to = [connects_to]
-        result.append(
-            {
-                "name": str(name),
-                "lat": float(lat),
-                "lng": float(lng),
-                "connects_to": [str(c) for c in connects_to],
-            }
-        )
+        raw_connections.extend((name, c) for c in connects_to)
 
     if not result:
         return ""
 
-    data_json = json.dumps(result, ensure_ascii=False)
+    # Keyed by the unordered station pair so each connection is drawn once.
+    # A detailed (mapping) definition takes precedence over a plain name.
+    edges = {}
+    for source, conn in raw_connections:
+        edge = _parse_connection(source, conn)
+        if edge is None:
+            continue
+        if edge["to"] not in coords:
+            print(
+                f"WARNING: station map: '{edge['from']}' connects to unknown "
+                f"station '{edge['to']}'"
+            )
+            continue
+        key = frozenset((edge["from"], edge["to"]))
+        detailed = isinstance(conn, dict)
+        if key in edges and (edges[key][1] or not detailed):
+            continue
+        edges[key] = (edge, detailed)
+    edges = [_split_segments(edge, coords) for edge, _ in edges.values()]
+
+    data_json = json.dumps(
+        {"stations": result, "edges": edges}, ensure_ascii=False
+    ).replace("</", "<\\/")
     return (
         '<script type="application/json" id="station-map-data">'
         f"{data_json}</script>"
